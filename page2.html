@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom ✦ Jemimmah — our love story</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, #ffe4e9 0%, #ffd0da 50%, #ffb7c5 100%);
+            position: relative;
+            padding: 20px;
+        }
+
+        .traveling-icons-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .travel-icon {
+            position: absolute;
+            font-size: clamp(20px, 4vw, 35px);
+            filter: drop-shadow(0 5px 15px rgba(255, 60, 120, 0.5));
+            animation: travelPath 18s linear infinite;
+            will-change: filter;
+            z-index: 1;
+        }
+
+        @keyframes travelPath {
+            /* stylelint-disable-next-line property-no-vendor-prefix */
+            0% { filter: drop-shadow(0 5px 15px rgba(255, 60, 120, 0)) opacity(0); }
+            10% { filter: drop-shadow(0 5px 15px rgba(255, 60, 120, 0.5)) opacity(1); }
+            30% { filter: drop-shadow(0 5px 15px rgba(255, 60, 120, 0.5)); }
+            50% { filter: drop-shadow(0 5px 15px rgba(255, 60, 120, 0.5)); }
+            70% { filter: drop-shadow(0 5px 15px rgba(255, 60, 120, 0.5)); }
+            90% { filter: drop-shadow(0 5px 15px rgba(255, 60, 120, 0.5)) opacity(1); }
+            100% { filter: drop-shadow(0 5px 15px rgba(255, 60, 120, 0)) opacity(0); }
+        }
+
+        .story-container {
+            position: relative;
+            z-index: 20;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 20px 80px;
+        }
+
+        .story-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .story-header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5em, 10vw, 5em);
+            background: linear-gradient(125deg, #ff2b4d, #ff6b8b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 5px 15px rgba(255, 80, 120, 0.3));
+        }
+
+        .story-header p {
+            font-size: clamp(1.1em, 4vw, 1.4em);
+            color: #4a2a2a;
+            background: rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            padding: 10px 30px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .story-card {
+            background: rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 20px 40px -10px rgba(255, 60, 100, 0.2);
+        }
+
+        .story-paragraph {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .paragraph-text {
+            font-size: clamp(1.2em, 4.5vw, 1.6em);
+            line-height: 1.7;
+            color: #2f1e1e;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 25px 30px;
+            border-radius: 40px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 25;
+        }
+
+        .paragraph-text::before {
+            content: '❤️';
+            position: absolute;
+            left: -10px;
+            top: -10px;
+            font-size: 24px;
+            opacity: 0.5;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { filter: opacity(0.5); }
+            50% { filter: opacity(1); }
+        }
+
+        .photo-love-frame {
+            display: flex;
+            justify-content: center;
+            margin: 15px 0;
+            z-index: 30;
+        }
+
+        .love-photo {
+            width: clamp(120px, 30vw, 180px);
+            height: clamp(120px, 30vw, 180px);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(255, 40, 80, 0.4), 0 0 0 5px rgba(255, 255, 255, 0.9);
+            animation: photoBob 5s ease-in-out infinite;
+            transition: all 0.4s ease;
+            border: 2px solid white;
+        }
+
+        .love-photo:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 30px 50px rgba(255, 20, 60, 0.6), 0 0 0 8px white;
+        }
+
+        .love-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes photoBob {
+            0%, 100% { will-change: auto; }
+            50% { will-change: auto; }
+        }
+
+        .story-paragraph.right .photo-love-frame { justify-content: flex-end; }
+        .story-paragraph.left .photo-love-frame { justify-content: flex-start; }
+        .story-paragraph.center .photo-love-frame { justify-content: center; }
+
+        .photo-pair {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .photo-pair .love-photo {
+            width: clamp(100px, 25vw, 150px);
+            height: clamp(100px, 25vw, 150px);
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 24px;
+            pointer-events: none;
+            z-index: 35;
+            filter: drop-shadow(0 5px 10px rgba(255, 80, 120, 0.4));
+            animation: travelBetween 8s ease-in-out infinite;
+        }
+
+        @keyframes travelBetween {
+            0% { filter: opacity(1); }
+            25% { filter: opacity(1); }
+            50% { filter: opacity(1); }
+            75% { filter: opacity(1); }
+            100% { filter: opacity(1); }
+        }
+
+        .proposal-section {
+            text-align: center;
+            margin: 70px 0 30px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.4);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border-radius: 60px;
+            border: 2px solid white;
+        }
+
+        .proposal-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.2em, 8vw, 4em);
+            color: #ff2b4d;
+            margin-bottom: 30px;
+        }
+
+        .proposal-text.large {
+            font-size: clamp(2.5em, 10vw, 5em);
+        }
+
+        .proposal-buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .proposal-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            font-size: clamp(1.3em, 5vw, 2em);
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.4s;
+            background: linear-gradient(135deg, #ff2b4d, #ff6b8b);
+            color: white;
+            box-shadow: 0 20px 40px rgba(255, 50, 90, 0.5);
+            text-decoration: none;
+        }
+
+        .proposal-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.4);
+            color: #ff2b4d;
+            border: 1px solid white;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 600px) {
+            .story-card { padding: 25px 15px; }
+            .paragraph-text { padding: 20px 15px; font-size: 1.1em; }
+            .love-photo { width: 130px; height: 130px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="traveling-icons-bg" id="travelingIcons"></div>
+
+    <div class="story-container">
+        <div class="story-header">
+            <h1>Tom ✦ Jemimmah</h1>
+            <p>our love story, frame by frame</p>
+        </div>
+
+        <div class="story-card">
+            <!-- Paragraph 1 -->
+            <div class="story-paragraph left">
+                <div class="paragraph-text">from the moment i saw you, something shifted in my universe. it wasn't just attraction — it was recognition. like my heart knew you before we even spoke.</div>
+                <div class="photo-love-frame">
+                    <div class="love-photo"><img src="ASSETS\WhatsApp Image 2026-02-13 at 21.55.16.jpeg" alt="Jemimmah"></div>
+                </div>
+            </div>
+
+            <!-- Paragraph 2 -->
+            <div class="story-paragraph right">
+                <div class="paragraph-text">you smiled, and i forgot every word i'd ever known. all i could think was — this girl. this one right here. she's gonna change my life.</div>
+                <div class="photo-love-frame">
+                    <div class="love-photo"><img src="ASSETS\WhatsApp Image 2026-02-13 at 10.38.30 (2).jpeg" alt="Tom"></div>
+                </div>
+            </div>
+
+            <!-- Paragraph 3 -->
+            <div class="story-paragraph center">
+                <div class="paragraph-text">they said we're like tom & jerry — but baby, we're so much more. no chasing, no chaos. just peace. just us. just love.</div>
+                <div class="photo-love-frame">
+                    <div class="love-photo"><img src="ASSETS\WhatsApp Image 2026-02-13 at 21.54.39.jpeg" alt="Together"></div>
+                </div>
+            </div>
+
+            <!-- Paragraph 4 -->
+            <div class="story-paragraph center">
+                <div class="paragraph-text">you're my pooike. my wifey. my jemmy. the one who makes ordinary days feel like movies.</div>
+                <div class="photo-pair">
+                    <div class="love-photo"><img src="ASSETS\WhatsApp Image 2026-02-13 at 21.56.28.jpeg" alt="Jemimmah"></div>
+                    <div class="love-photo"><img src="ASSETS\WhatsApp Image 2026-02-13 at 21.37.06.jpeg" alt="Tom"></div>
+                </div>
+            </div>
+
+            <!-- Paragraph 5 -->
+            <div class="story-paragraph left">
+                <div class="paragraph-text">today we made it official. tomorrow is valentine's. but honestly? every day with you feels like february 14th.</div>
+                <div class="photo-love-frame">
+                    <div class="love-photo"><img src="ASSETS\WhatsApp_Image_2026-02-13_at_21.41.57-removebg-preview.png" alt="Together"></div>
+                </div>
+            </div>
+
+            <!-- Paragraph 6 - Final paragraph -->
+            <div class="story-paragraph right">
+                <div class="paragraph-text">so here's my promise — to cherish you, adore you, and love you in ways that make your heart smile. but i want more than just valentine's. i want forever.</div>
+                <div class="photo-love-frame">
+                    <div class="love-photo"><img src="ASSETS\WhatsApp Image 2026-02-13 at 21.55.42.jpeg" alt="Jemimmah"></div>
+                </div>
+            </div>
+
+            <!-- PROPOSAL SECTION -->
+            <div class="proposal-section">
+                <div class="proposal-text">Jemimmah, my pooike, my wifey...</div>
+                <div class="proposal-text large">will you be my girlfriend?</div>
+                <div class="proposal-buttons">
+                    <!-- THIS IS THE LINK TO PAGE 3 - NO JAVASCRIPT -->
+                    <a href="page3.html" class="proposal-btn">yes, i'm yours ❤️</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <!-- THIS IS THE LINK BACK TO PAGE 1 - NO JAVASCRIPT -->
+            <a href="index.html" class="nav-btn">← back to valentine</a>
+        </div>
+    </div>
+
+    <script>
+        // ==============================================
+        // TRAVELING ICONS
+        // ==============================================
+        function createTravelingIcons() {
+            const container = document.getElementById('travelingIcons');
+            const icons = ['❤️', '💕', '💗', '💓', '💖', '🌸', '🌹', '🥰', '💘', '💝', '💞', '✨', '🌟', '💫', '🌷', '😘', '💋', '💌'];
+            
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    createIcon();
+                }, i * 150);
+            }
+            
+            setInterval(() => {
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        createIcon();
+                    }, i * 200);
+                }
+            }, 3000);
+        }
+
+        function createIcon() {
+            const container = document.getElementById('travelingIcons');
+            const icons = ['❤️', '💕', '💗', '💓', '💖', '🌸', '🌹', '🥰', '💘', '💝', '💞', '✨', '🌟', '💫', '🌷', '😘', '💋', '💌'];
+            
+            const icon = document.createElement('div');
+            icon.className = 'travel-icon';
+            icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            icon.style.top = Math.random() * 100 + '%';
+            icon.style.left = '0';
+            icon.style.fontSize = (Math.random() * 25 + 20) + 'px';
+            icon.style.animationDuration = (Math.random() * 10 + 15) + 's';
+            icon.style.animationDelay = (Math.random() * 3 + 0.5) + 's';
+            icon.style.transform = `rotate(${Math.random() * 360}deg)`;
+            
+            container.appendChild(icon);
+            
+            setTimeout(() => {
+                icon.remove();
+            }, 35000);
+        }
+
+        // ==============================================
+        // FLOATING ICONS BETWEEN PARAGRAPHS
+        // ==============================================
+        function createFloatingIcons() {
+            const paragraphs = document.querySelectorAll('.story-paragraph');
+            
+            paragraphs.forEach((para, index) => {
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        const icon = document.createElement('div');
+                        icon.className = 'floating-icon';
+                        icon.innerHTML = ['❤️', '💕', '💗', '💓', '💖', '🌸'][Math.floor(Math.random() * 6)];
+                        
+                        const rect = para.getBoundingClientRect();
+                        const scrollY = window.scrollY;
+                        
+                        icon.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                        icon.style.top = (rect.top + scrollY + Math.random() * rect.height) + 'px';
+                        
+                        icon.style.animation = `travelBetween ${6 + Math.random() * 6}s ease-in-out infinite`;
+                        
+                        document.body.appendChild(icon);
+                        
+                        setTimeout(() => {
+                            icon.remove();
+                        }, 12000);
+                    }, index * 200 + i * 300);
+                }
+            });
+            
+            setInterval(() => {
+                const randomPara = paragraphs[Math.floor(Math.random() * paragraphs.length)];
+                if (randomPara) {
+                    const icon = document.createElement('div');
+                    icon.className = 'floating-icon';
+                    icon.innerHTML = ['❤️', '💕', '💗', '💓', '💖', '🌸', '🌹'][Math.floor(Math.random() * 7)];
+                    
+                    const rect = randomPara.getBoundingClientRect();
+                    const scrollY = window.scrollY;
+                    
+                    icon.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                    icon.style.top = (rect.top + scrollY + Math.random() * rect.height) + 'px';
+                    icon.style.animation = `travelBetween ${5 + Math.random() * 7}s ease-in-out infinite`;
+                    
+                    document.body.appendChild(icon);
+                    
+                    setTimeout(() => {
+                        icon.remove();
+                    }, 10000);
+                }
+            }, 2000);
+        }
+
+        // ==============================================
+        // INITIALIZE
+        // ==============================================
+        window.onload = function() {
+            createTravelingIcons();
+            createFloatingIcons();
+        };
+    </script>
+</body>
+</html>

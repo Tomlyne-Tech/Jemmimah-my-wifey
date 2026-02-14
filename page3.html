@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom ✦ Jemimmah — forever one</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, #fff0f3 0%, #ffe4e9 50%, #ffd9e5 100%);
+            position: relative;
+            padding: 20px;
+        }
+
+        .wedding-sparkles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .wedding-sparkle {
+            position: absolute;
+            color: rgba(255, 215, 0, 0.7);
+            font-size: 25px;
+            animation: weddingFloat 18s linear infinite;
+            text-shadow: 0 0 10px gold;
+        }
+
+        @keyframes weddingFloat {
+            0% { transform: translateY(100vh) scale(0) rotate(0deg); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1) rotate(360deg); opacity: 0; }
+        }
+
+        .love-icons-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 5;
+            overflow: hidden;
+        }
+
+        .wedding-icon {
+            position: absolute;
+            font-size: clamp(20px, 4vw, 35px);
+            filter: drop-shadow(0 5px 15px rgba(255, 80, 120, 0.4));
+            animation: weddingTravel 20s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes weddingTravel {
+            0% { transform: translateX(-150px) translateY(0) rotate(0deg) scale(0.3); opacity: 0; }
+            10% { opacity: 1; transform: translateX(10vw) translateY(20px) rotate(45deg) scale(0.8); }
+            50% { transform: translateX(50vw) translateY(-50px) rotate(180deg) scale(1.2); opacity: 1; }
+            90% { opacity: 1; transform: translateX(80vw) translateY(40px) rotate(300deg) scale(0.9); }
+            100% { transform: translateX(calc(100vw + 200px)) translateY(100px) rotate(360deg) scale(0.3); opacity: 0; }
+        }
+
+        .vows-container {
+            position: relative;
+            z-index: 20;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .vows-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .vows-header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(3em, 12vw, 6em);
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 5px 15px rgba(255,215,0,0.5));
+            margin-bottom: 10px;
+        }
+
+        .vows-header p {
+            font-size: clamp(1.2em, 4vw, 1.8em);
+            color: #4a2a2a;
+            background: rgba(255,255,255,0.4);
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            padding: 10px 30px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .couple-photo-frame {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 50px;
+        }
+
+        .giant-love-photo {
+            width: clamp(280px, 50vw, 450px);
+            height: clamp(280px, 50vw, 450px);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(255, 40, 80, 0.5),
+                        0 0 0 10px rgba(255, 255, 255, 0.95),
+                        0 0 0 20px rgba(255, 215, 0, 0.3);
+            animation: coupleFloat 6s ease-in-out infinite;
+            border: 3px solid white;
+            margin: 0 auto;
+        }
+
+        .giant-love-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes coupleFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        .vows-card {
+            background: rgba(255, 255, 255, 0.3);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border-radius: 70px;
+            padding: 50px 40px;
+            margin: 40px 0;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 30px 60px -15px rgba(255, 60, 100, 0.3);
+        }
+
+        .vows-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5em, 8vw, 4.5em);
+            color: #ff2b4d;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .vow {
+            font-size: clamp(1.2em, 4vw, 1.6em);
+            line-height: 1.8;
+            color: #2f1e1e;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 25px 35px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .vow::before {
+            content: '💍';
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            font-size: 30px;
+            animation: ringSparkle 2s ease-in-out infinite;
+        }
+
+        @keyframes ringSparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+            50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+        }
+
+        .vow-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.2em, 7vw, 3.5em);
+            color: #ff2b4d;
+            text-align: right;
+            margin-top: 40px;
+            padding-right: 30px;
+        }
+
+        .official-section {
+            text-align: center;
+            margin: 50px 0 30px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+        }
+
+        .official-badge {
+            display: inline-block;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #ff2b4d, #ff6b8b);
+            border-radius: 80px;
+            font-size: clamp(1.8em, 6vw, 3em);
+            color: white;
+            font-weight: 700;
+            border: 4px solid white;
+            box-shadow: 0 20px 40px rgba(255, 50, 90, 0.4);
+            animation: badgeGlow 2s ease-in-out infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes badgeGlow {
+            0%, 100% { transform: scale(1); box-shadow: 0 20px 40px rgba(255,50,90,0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 30px 60px rgba(255,30,70,0.6); }
+        }
+
+        .tom-jemmy-forever {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.8em, 10vw, 5em);
+            background: linear-gradient(135deg, #d4af37, #ffd700);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            background: rgba(255,255,255,0.5);
+            color: #ff2b4d;
+            border: 1px solid white;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.8);
+            transform: translateY(-3px);
+        }
+
+        .forever-text {
+            font-size: 1.8em;
+            color: #4a2a2a;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 600px) {
+            .vows-card { padding: 30px 20px; }
+            .vow { padding: 20px; font-size: 1.1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wedding-sparkles" id="weddingSparkles"></div>
+    <div class="love-icons-container" id="loveIcons"></div>
+
+    <div class="vows-container">
+        <div class="vows-header">
+            <h1>Tom ❤️ Jemimmah</h1>
+            <p>officially one, forever in love</p>
+        </div>
+
+        <!-- GIANT COUPLE PHOTO IN LOVE FRAME -->
+        <div class="couple-photo-frame">
+            <div class="giant-love-photo">
+                <img src="ASSETS\photo-1516589178581-6cd7833ae3b2.jpeg" alt="Tom & Jemimmah - Together Forever">
+            </div>
+        </div>
+
+        <!-- BEAUTIFUL VOWS CARD -->
+        <div class="vows-card">
+            <div class="vows-title">my vows to you, Jemimmah</div>
+            
+            <div class="vow">i promise to cherish you — not just today, not just on valentine's, but every single day of my life. your smile will be my favorite reason to wake up, and your happiness will be my life's mission.</div>
+            
+            <div class="vow">i promise to value you — your dreams, your thoughts, your feelings. i will listen when you speak, i will hold you when you're down, and i will celebrate you when you rise. you will never feel unseen, not with me.</div>
+            
+            <div class="vow">i promise to never fail you. life will throw storms at us, but i will be your shelter. when you're tired, i'll carry you. when you're lost, i'll find you. when you doubt, i'll believe enough for both of us.</div>
+            
+            <div class="vow">i promise to love you with intention — to choose you every morning, to fight for us every night. to be your peace, your partner, your home. to grow old with you and still look at you like you're the most beautiful thing i've ever seen.</div>
+            
+            <div class="vow">i promise to be the man you deserve — patient when you need patience, strong when you need strength, soft when you need tenderness. i will protect your heart with everything i have.</div>
+            
+            <div class="vow-signature">
+                i'm yours, forever,<br>Tom ❤️
+            </div>
+        </div>
+
+        <!-- OFFICIALLY ONE SECTION -->
+        <div class="official-section">
+            <div class="official-badge">❤️ OFFICIALLY ONE ❤️</div>
+            <div class="tom-jemmy-forever">Tom ✦ Jemimmah</div>
+            <div class="forever-text">together, forever, always</div>
+        </div>
+
+        <!-- NAVIGATION BUTTONS - ALL LINKS, NO JAVASCRIPT -->
+        <div class="nav-buttons">
+            <a href="page2.html" class="nav-btn">← our story</a>
+            <a href="#" class="nav-btn" id="celebrateBtn">celebrate us ❤️</a>
+        </div>
+    </div>
+
+    <script>
+        // ==============================================
+        // CREATE WEDDING SPARKLES
+        // ==============================================
+        function createWeddingSparkles() {
+            let c = document.getElementById('weddingSparkles'); 
+            c.innerHTML = '';
+            let arr = ['✨','🌟','💫','⭐','💍','💒','👰','🤵','🌸','🌹','💕','💖'];
+            for (let i = 0; i < 40; i++) {
+                let s = document.createElement('div'); 
+                s.className = 'wedding-sparkle';
+                s.innerHTML = arr[Math.floor(Math.random() * arr.length)];
+                s.style.left = Math.random() * 100 + '%'; 
+                s.style.animationDuration = (Math.random() * 12 + 15) + 's';
+                s.style.animationDelay = (Math.random() * 5) + 's'; 
+                s.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                c.appendChild(s);
+            }
+        }
+
+        // ==============================================
+        // CREATE TRAVELING ICONS
+        // ==============================================
+        function createTravelingIcons() {
+            const container = document.getElementById('loveIcons');
+            const icons = ['❤️', '💕', '💗', '💓', '💖', '🌸', '🌹', '🥰', '💍', '💒', '👰', '🤵', '💞', '✨', '🌟', '💫'];
+            
+            function createOne() {
+                let icon = document.createElement('div'); 
+                icon.className = 'wedding-icon';
+                icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+                icon.style.top = Math.random() * 100 + '%'; 
+                icon.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                icon.style.animationDuration = (Math.random() * 12 + 15) + 's'; 
+                icon.style.animationDelay = (Math.random() * 2) + 's';
+                container.appendChild(icon); 
+                setTimeout(() => icon.remove(), 30000);
+            }
+            
+            for (let i = 0; i < 30; i++) setTimeout(createOne, i * 150);
+            setInterval(() => { 
+                for(let i = 0; i < 3; i++) setTimeout(createOne, i * 200); 
+            }, 2500);
+        }
+
+        // ==============================================
+        // CELEBRATE FUNCTION (only one with onclick)
+        // ==============================================
+        function celebrate() { 
+            alert('❤️ TOM & JEMMIMAH — OFFICIALLY ONE FOREVER ❤️'); 
+            // Celebration burst
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    let icon = document.createElement('div');
+                    icon.className = 'wedding-sparkle';
+                    icon.innerHTML = ['❤️','💕','💗','💖','💍','✨','🌟'][Math.floor(Math.random()*7)];
+                    icon.style.top = Math.random() * 100 + '%';
+                    icon.style.left = Math.random() * 100 + '%';
+                    icon.style.fontSize = (Math.random() * 30 + 20) + 'px';
+                    icon.style.animation = 'weddingFloat 10s linear infinite';
+                    document.getElementById('weddingSparkles').appendChild(icon);
+                    setTimeout(() => icon.remove(), 10000);
+                }, i * 50);
+            }
+        }
+
+        // ==============================================
+        // INITIALIZE
+        // ==============================================
+        window.onload = function() {
+            createWeddingSparkles();
+            createTravelingIcons();
+            document.getElementById('celebrateBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                celebrate();
+            });
+        };
+    </script>
+</body>
+</html>
